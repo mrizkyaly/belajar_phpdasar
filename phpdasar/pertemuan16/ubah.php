@@ -1,4 +1,9 @@
 <?php
+	session_start();
+	if (!isset($_SESSION["login"])) {
+		header("location: login.php");
+		exit;
+	}
 	require 'function.php';
 	// Ambil data di url
 	$id = $_GET["id"];
